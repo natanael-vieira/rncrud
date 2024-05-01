@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, FlatList } from 'react-native'
 import users from '../data/users'
-import { Avatar, ListItem } from '@rneui/themed'
+import { Avatar, ListItem, Button, Icon } from '@rneui/themed'
 
 export default props => {
 
@@ -10,6 +10,18 @@ export default props => {
             <ListItem 
                 bottomDivider
                 onPress={() => props.navigation.navigate('UserForm')}>
+                <Button 
+                    onPress={() => {
+                        props.navigation.navigate('UserForm', user);
+                      }}
+                      type="clear"
+                      icon={<Icon name="edit" size={25} color="orange" />}
+                />
+                <Button 
+                    onPress={() => {confirmUserDeletion(user)}}
+                    type="clear"
+                    icon={<Icon name="delete" size={25} color="red"/>}
+                />
                 <Avatar tittle={user.name} rounded source={{uri: user.avatarUrl}} />
                 <ListItem.Content>
                     <ListItem.Title>{user.name}</ListItem.Title>
