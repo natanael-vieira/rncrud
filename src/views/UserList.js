@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, FlatList, Alert } from 'react-native'
+import { View, FlatList, Alert } from 'react-native'
 import users from '../data/users'
 import { Avatar, ListItem, Button, Icon } from '@rneui/themed'
 
