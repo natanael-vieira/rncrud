@@ -7,7 +7,13 @@ const UsersContext = createContext({})
 export const UsersProvider  = props => {
 
     function reducer(state, action) {
-        console.warn(action)
+        if(action.type === 'deleteUser') {
+            const user = action.payload
+            return {
+                //...state,
+                user: state.users.filter(u => u.id !== user.id)
+            }
+        }
         return state
     }
 
