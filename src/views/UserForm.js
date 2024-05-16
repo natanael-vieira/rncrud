@@ -16,7 +16,7 @@ export default ({route, navigation}) => {
             <TextInput 
                 style={style.input}
                 onChangeText={email => setUser({...user, email})}
-                placeholder='Informe o nome'
+                placeholder='Informe o e-mail'
                 value={user.email}
             />
             <Text>URL do Avatar</Text>
