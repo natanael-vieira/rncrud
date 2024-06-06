@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -6,6 +7,7 @@ import UserForm from './views/UserForm'
 import { Button, Icon } from '@rneui/themed'
 import { UsersProvider } from './context/UsersContext'
 
+
 const Stack = createNativeStackNavigator()
 
 export default props => {
@@ -13,31 +15,30 @@ export default props => {
         <UsersProvider>
             <NavigationContainer>
                 <Stack.Navigator
-                    initialRouteName='UserList'
-                    screenOptions={screenOptions}
-                >
+                    initialRouteName="UserList"
+                    screenOptions={screenOptions}>
                     <Stack.Screen
-                        name='UserList'
-                        component={UserList} 
+                        name="UserList"
+                        component={UserList}
                         options={({ navigation }) => {
                             return {
-                                title: 'Lista de Usuários',
+                                title: "Lista de Usuários",
                                 headerRight: () => (
                                     <Button
-                                        onPress={() => navigation.navigate('UserForm')} 
-                                        type='clear'
-                                        icon={<Icon name='add' size={25} color='white' />}
+                                        onPress={() => navigation.navigate("UserForm")}
+                                        type="clear"
+                                        icon={<Icon name="add" size={25} color="white" />}
                                     />
                                 )
                             }
                         }}
                     />
                     <Stack.Screen
-                        name='UserForm'
+                        name="UserForm"
                         component={UserForm}
                         options={{
-                            title: 'Formulário de Usuários'
-                        }} 
+                            title: "Formulário de Usuários"
+                        }}
                     />
                 </Stack.Navigator>
             </NavigationContainer>
